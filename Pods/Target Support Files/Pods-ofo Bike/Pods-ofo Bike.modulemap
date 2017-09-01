@@ -1,0 +1,6 @@
+framework module Pods_ofo_Bike {
+  umbrella header "Pods-ofo Bike-umbrella.h"
+
+  export *
+  module * { export * }
+}

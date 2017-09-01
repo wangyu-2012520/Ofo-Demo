@@ -1,0 +1,439 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D20D474EA213145E2B70BBF /* Pods_ofo_Bike.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D79EBA9572F83DE65A3CA484 /* Pods_ofo_Bike.framework */; };
+		7649FEC61F45180200A45F0E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7649FEC51F45180200A45F0E /* AppDelegate.swift */; };
+		7649FEC81F45180200A45F0E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7649FEC71F45180200A45F0E /* MainViewController.swift */; };
+		7649FECE1F45180200A45F0E /* ofo_Bike.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7649FECC1F45180200A45F0E /* ofo_Bike.xcdatamodeld */; };
+		7649FED01F45180200A45F0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7649FECF1F45180200A45F0E /* Assets.xcassets */; };
+		7649FEDB1F455AE300A45F0E /* WebActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7649FEDA1F455AE300A45F0E /* WebActivityViewController.swift */; };
+		7649FEE11F4564FB00A45F0E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7649FEDE1F4562A000A45F0E /* Main.storyboard */; };
+		7649FEE61F4D5A1100A45F0E /* LeftBarMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7649FEE51F4D5A1100A45F0E /* LeftBarMenuTableViewController.swift */; };
+		7649FEEE1F4EA9A300A45F0E /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7649FEED1F4EA9A300A45F0E /* ContainerViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3ADC5B50FCE9FDB85FB59E4B /* Pods-ofo Bike.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ofo Bike.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ofo Bike/Pods-ofo Bike.debug.xcconfig"; sourceTree = "<group>"; };
+		7649FEC21F45180200A45F0E /* ofo Bike.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ofo Bike.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7649FEC51F45180200A45F0E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7649FEC71F45180200A45F0E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		7649FECD1F45180200A45F0E /* ofo_Bike.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ofo_Bike.xcdatamodel; sourceTree = "<group>"; };
+		7649FECF1F45180200A45F0E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7649FED41F45180200A45F0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7649FEDA1F455AE300A45F0E /* WebActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebActivityViewController.swift; sourceTree = "<group>"; };
+		7649FEDE1F4562A000A45F0E /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		7649FEE51F4D5A1100A45F0E /* LeftBarMenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftBarMenuTableViewController.swift; sourceTree = "<group>"; };
+		7649FEE71F4E5D4500A45F0E /* ofo Bike-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ofo Bike-Bridging-Header.h"; sourceTree = "<group>"; };
+		7649FEED1F4EA9A300A45F0E /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
+		769FE9E81F57902800EDA5B3 /* ofo Bike.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ofo Bike.entitlements"; sourceTree = "<group>"; };
+		769FE9E91F57C91A00EDA5B3 /* Hong Kong.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Hong Kong.gpx"; sourceTree = "<group>"; };
+		769FE9EA1F57CF8A00EDA5B3 /* ShaoShi Castle.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "ShaoShi Castle.gpx"; sourceTree = "<group>"; };
+		769FE9EB1F57D08100EDA5B3 /* 227 Elizabeth Street.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "227 Elizabeth Street.gpx"; sourceTree = "<group>"; };
+		76E149D51F54FCF700B10F05 /* AMapNavi */ = {isa = PBXFileReference; lastKnownFileType = text; name = AMapNavi; path = Pods/AMapNavi; sourceTree = "<group>"; };
+		C91A9B4BF25F3F94353FBAC1 /* Pods-ofo Bike.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ofo Bike.release.xcconfig"; path = "Pods/Target Support Files/Pods-ofo Bike/Pods-ofo Bike.release.xcconfig"; sourceTree = "<group>"; };
+		D79EBA9572F83DE65A3CA484 /* Pods_ofo_Bike.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ofo_Bike.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7649FEBF1F45180200A45F0E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D20D474EA213145E2B70BBF /* Pods_ofo_Bike.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7649FEB91F45180200A45F0E = {
+			isa = PBXGroup;
+			children = (
+				7649FEC41F45180200A45F0E /* ofo Bike */,
+				7649FEC31F45180200A45F0E /* Products */,
+				7649FEE21F4669D200A45F0E /* Frameworks */,
+				769FE9EC1F57D0F500EDA5B3 /* Location */,
+				D860B00EBD2B3DDE28A70121 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		7649FEC31F45180200A45F0E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7649FEC21F45180200A45F0E /* ofo Bike.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7649FEC41F45180200A45F0E /* ofo Bike */ = {
+			isa = PBXGroup;
+			children = (
+				769FE9E81F57902800EDA5B3 /* ofo Bike.entitlements */,
+				7649FEC51F45180200A45F0E /* AppDelegate.swift */,
+				7649FEC71F45180200A45F0E /* MainViewController.swift */,
+				7649FEDA1F455AE300A45F0E /* WebActivityViewController.swift */,
+				7649FEDE1F4562A000A45F0E /* Main.storyboard */,
+				7649FEED1F4EA9A300A45F0E /* ContainerViewController.swift */,
+				7649FEE51F4D5A1100A45F0E /* LeftBarMenuTableViewController.swift */,
+				7649FECF1F45180200A45F0E /* Assets.xcassets */,
+				7649FED41F45180200A45F0E /* Info.plist */,
+				7649FECC1F45180200A45F0E /* ofo_Bike.xcdatamodeld */,
+				7649FEE71F4E5D4500A45F0E /* ofo Bike-Bridging-Header.h */,
+			);
+			path = "ofo Bike";
+			sourceTree = "<group>";
+		};
+		7649FEE21F4669D200A45F0E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				76E149D51F54FCF700B10F05 /* AMapNavi */,
+				D79EBA9572F83DE65A3CA484 /* Pods_ofo_Bike.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		769FE9EC1F57D0F500EDA5B3 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				769FE9E91F57C91A00EDA5B3 /* Hong Kong.gpx */,
+				769FE9EA1F57CF8A00EDA5B3 /* ShaoShi Castle.gpx */,
+				769FE9EB1F57D08100EDA5B3 /* 227 Elizabeth Street.gpx */,
+			);
+			name = Location;
+			sourceTree = "<group>";
+		};
+		D860B00EBD2B3DDE28A70121 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3ADC5B50FCE9FDB85FB59E4B /* Pods-ofo Bike.debug.xcconfig */,
+				C91A9B4BF25F3F94353FBAC1 /* Pods-ofo Bike.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7649FEC11F45180200A45F0E /* ofo Bike */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7649FED71F45180200A45F0E /* Build configuration list for PBXNativeTarget "ofo Bike" */;
+			buildPhases = (
+				A56A6EE0886B24E0AE8EF32F /* [CP] Check Pods Manifest.lock */,
+				7649FEBE1F45180200A45F0E /* Sources */,
+				7649FEBF1F45180200A45F0E /* Frameworks */,
+				7649FEC01F45180200A45F0E /* Resources */,
+				6DB6F2EFD7BE81F3D3E62353 /* [CP] Embed Pods Frameworks */,
+				E1F1E7623B57EE1115A382E3 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ofo Bike";
+			productName = "ofo Bike";
+			productReference = 7649FEC21F45180200A45F0E /* ofo Bike.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7649FEBA1F45180200A45F0E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "Yu Wang";
+				TargetAttributes = {
+					7649FEC11F45180200A45F0E = {
+						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 0;
+							};
+							com.apple.WAC = {
+								enabled = 0;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 7649FEBD1F45180200A45F0E /* Build configuration list for PBXProject "ofo Bike" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7649FEB91F45180200A45F0E;
+			productRefGroup = 7649FEC31F45180200A45F0E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7649FEC11F45180200A45F0E /* ofo Bike */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7649FEC01F45180200A45F0E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7649FEE11F4564FB00A45F0E /* Main.storyboard in Resources */,
+				7649FED01F45180200A45F0E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6DB6F2EFD7BE81F3D3E62353 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ofo Bike/Pods-ofo Bike-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A56A6EE0886B24E0AE8EF32F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E1F1E7623B57EE1115A382E3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ofo Bike/Pods-ofo Bike-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7649FEBE1F45180200A45F0E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7649FEDB1F455AE300A45F0E /* WebActivityViewController.swift in Sources */,
+				7649FEC81F45180200A45F0E /* MainViewController.swift in Sources */,
+				7649FEE61F4D5A1100A45F0E /* LeftBarMenuTableViewController.swift in Sources */,
+				7649FEC61F45180200A45F0E /* AppDelegate.swift in Sources */,
+				7649FEEE1F4EA9A300A45F0E /* ContainerViewController.swift in Sources */,
+				7649FECE1F45180200A45F0E /* ofo_Bike.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		7649FED51F45180200A45F0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7649FED61F45180200A45F0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7649FED81F45180200A45F0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3ADC5B50FCE9FDB85FB59E4B /* Pods-ofo Bike.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = LMVHH6H46X;
+				INFOPLIST_FILE = "ofo Bike/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ElasticGrid.ofo-Bike";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ofo Bike/ofo Bike-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7649FED91F45180200A45F0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C91A9B4BF25F3F94353FBAC1 /* Pods-ofo Bike.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = LMVHH6H46X;
+				INFOPLIST_FILE = "ofo Bike/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ElasticGrid.ofo-Bike";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ofo Bike/ofo Bike-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7649FEBD1F45180200A45F0E /* Build configuration list for PBXProject "ofo Bike" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7649FED51F45180200A45F0E /* Debug */,
+				7649FED61F45180200A45F0E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7649FED71F45180200A45F0E /* Build configuration list for PBXNativeTarget "ofo Bike" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7649FED81F45180200A45F0E /* Debug */,
+				7649FED91F45180200A45F0E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		7649FECC1F45180200A45F0E /* ofo_Bike.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7649FECD1F45180200A45F0E /* ofo_Bike.xcdatamodel */,
+			);
+			currentVersion = 7649FECD1F45180200A45F0E /* ofo_Bike.xcdatamodel */;
+			path = ofo_Bike.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 7649FEBA1F45180200A45F0E /* Project object */;
+}
