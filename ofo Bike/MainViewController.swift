@@ -121,7 +121,13 @@ class MainViewController: UIViewController, MAMapViewDelegate, AMapSearchDelegat
         pointAnnotations = response.pois.map {
             let annotation = MAPointAnnotation()
             annotation.coordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees($0.location.latitude), longitude: CLLocationDegrees($0.location.longitude))
-            annotation.title = $0.name
+            
+            if ($0.distance < 200) {
+                annotation.title = "Red Pocket Bike"
+                annotation.subtitle = "Ride 20 mins for free"
+            } else {
+                annotation.title = "Normal Bike"
+            }
             return annotation
         }
         
@@ -129,26 +135,32 @@ class MainViewController: UIViewController, MAMapViewDelegate, AMapSearchDelegat
         mapView.showAnnotations(pointAnnotations, animated: true)
     }
     
-    func mapView(_ mapView: MAMapView!, viewFor annotation: MAAnnotation!) -> MAAnnotationView? {
-        if annotation.isKind(of: MAPointAnnotation.self) {
-            let pointReuseIndetifier = "pointReuseIndetifier"
-            var annotationView: MAPinAnnotationView? = mapView.dequeueReusableAnnotationView(withIdentifier: pointReuseIndetifier) as! MAPinAnnotationView?
-            
-            if annotation == nil {
-                annotationView = MAPinAnnotationView(annotation: annotation, reuseIdentifier: pointReuseIndetifier)
-            }
-            
-            annotationView?.canShowCallout = true
-            annotationView?.animatesDrop = true
-            annotationView?.isDraggable = true
-            annotationView?.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
-            
-            guard annotationView != nil else {
-                return nil
-            }
-            return annotationView
-        }
-        return nil
-    }
+//    func mapView(_ mapView: MAMapView!, viewFor annotation: MAAnnotation!) -> MAAnnotationView? {
+//        if annotation.isKind(of: MAPointAnnotation.self) {
+//            let pointReuseIndetifier = "pointReuseIndetifier"
+//            var annotationView: MAPinAnnotationView? = mapView.dequeueReusableAnnotationView(withIdentifier: pointReuseIndetifier) as! MAPinAnnotationView?
+//
+//            if annotation == nil {
+//                annotationView = MAPinAnnotationView(annotation: annotation, reuseIdentifier: pointReuseIndetifier)
+//            }
+//
+//            if (annotation.title == "Red Pocket Bike") {
+//                annotationView?.image = UIImage(named: "homepage_nearbyBikeRedPacket")
+//            } else {
+//                annotationView?.image = UIImage(named: "homepage_nearbyBike")
+//            }
+//
+//            annotationView?.canShowCallout = true
+//            annotationView?.animatesDrop = true
+//            annotationView?.isDraggable = true
+//            annotationView?.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+//
+////            guard annotationView != nil else {
+////                return nil
+////            }
+//            return annotationView
+//        }
+//        return nil
+//    }
 }
 
