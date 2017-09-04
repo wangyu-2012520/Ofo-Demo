@@ -16,6 +16,7 @@
 		7649FEE11F4564FB00A45F0E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7649FEDE1F4562A000A45F0E /* Main.storyboard */; };
 		7649FEE61F4D5A1100A45F0E /* LeftBarMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7649FEE51F4D5A1100A45F0E /* LeftBarMenuTableViewController.swift */; };
 		7649FEEE1F4EA9A300A45F0E /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7649FEED1F4EA9A300A45F0E /* ContainerViewController.swift */; };
+		76CED7681F5D20FB0016A0D5 /* CustomPinAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CED7671F5D20FB0016A0D5 /* CustomPinAnnotation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		769FE9E91F57C91A00EDA5B3 /* Hong Kong.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Hong Kong.gpx"; sourceTree = "<group>"; };
 		769FE9EA1F57CF8A00EDA5B3 /* ShaoShi Castle.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "ShaoShi Castle.gpx"; sourceTree = "<group>"; };
 		769FE9EB1F57D08100EDA5B3 /* 227 Elizabeth Street.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "227 Elizabeth Street.gpx"; sourceTree = "<group>"; };
+		76CED7671F5D20FB0016A0D5 /* CustomPinAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPinAnnotation.swift; sourceTree = "<group>"; };
 		76E149D51F54FCF700B10F05 /* AMapNavi */ = {isa = PBXFileReference; lastKnownFileType = text; name = AMapNavi; path = Pods/AMapNavi; sourceTree = "<group>"; };
 		C91A9B4BF25F3F94353FBAC1 /* Pods-ofo Bike.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ofo Bike.release.xcconfig"; path = "Pods/Target Support Files/Pods-ofo Bike/Pods-ofo Bike.release.xcconfig"; sourceTree = "<group>"; };
 		D79EBA9572F83DE65A3CA484 /* Pods_ofo_Bike.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ofo_Bike.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,6 +87,7 @@
 				7649FED41F45180200A45F0E /* Info.plist */,
 				7649FECC1F45180200A45F0E /* ofo_Bike.xcdatamodeld */,
 				7649FEE71F4E5D4500A45F0E /* ofo Bike-Bridging-Header.h */,
+				76CED7671F5D20FB0016A0D5 /* CustomPinAnnotation.swift */,
 			);
 			path = "ofo Bike";
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76CED7681F5D20FB0016A0D5 /* CustomPinAnnotation.swift in Sources */,
 				7649FEDB1F455AE300A45F0E /* WebActivityViewController.swift in Sources */,
 				7649FEC81F45180200A45F0E /* MainViewController.swift in Sources */,
 				7649FEE61F4D5A1100A45F0E /* LeftBarMenuTableViewController.swift in Sources */,

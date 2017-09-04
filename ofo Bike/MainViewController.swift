@@ -12,6 +12,9 @@ import SidebarOverlay
 class MainViewController: UIViewController, MAMapViewDelegate, AMapSearchDelegate{
     var mapView: MAMapView!
     var search: AMapSearchAPI!
+    var customPin: CustomPinAnnotation!
+    var customPinView: MAAnnotationView!
+    
     @IBOutlet weak var panelView: UIView!
     
     // MARK: - UI stack
@@ -78,6 +81,20 @@ class MainViewController: UIViewController, MAMapViewDelegate, AMapSearchDelegat
         search.aMapPOIAroundSearch(request)
     }
     
+    // after Map view is initilized
+    func mapInitComplete(_ mapView: MAMapView!) {
+        
+        // init custom pin
+        customPin = CustomPinAnnotation()
+        customPin.coordinate = mapView.centerCoordinate
+        customPin.lockedScreenPoint = CGPoint(x: CGFloat(view.bounds.width/2), y: CGFloat(view.bounds.height/2))
+        customPin.isLockedToScreen = true
+        
+        // show custom pin 
+        mapView.addAnnotation(customPin)
+        mapView.showAnnotations([customPin], animated: true)
+    }
+    
 //    override func viewDidAppear(_ animated: Bool) {
 //        searchBikeNearBy()
 //    }
@@ -135,32 +152,45 @@ class MainViewController: UIViewController, MAMapViewDelegate, AMapSearchDelegat
         mapView.showAnnotations(pointAnnotations, animated: true)
     }
     
-//    func mapView(_ mapView: MAMapView!, viewFor annotation: MAAnnotation!) -> MAAnnotationView? {
-//        if annotation.isKind(of: MAPointAnnotation.self) {
-//            let pointReuseIndetifier = "pointReuseIndetifier"
-//            var annotationView: MAPinAnnotationView? = mapView.dequeueReusableAnnotationView(withIdentifier: pointReuseIndetifier) as! MAPinAnnotationView?
-//
-//            if annotation == nil {
-//                annotationView = MAPinAnnotationView(annotation: annotation, reuseIdentifier: pointReuseIndetifier)
-//            }
-//
-//            if (annotation.title == "Red Pocket Bike") {
-//                annotationView?.image = UIImage(named: "homepage_nearbyBikeRedPacket")
-//            } else {
-//                annotationView?.image = UIImage(named: "homepage_nearbyBike")
-//            }
-//
-//            annotationView?.canShowCallout = true
-//            annotationView?.animatesDrop = true
-//            annotationView?.isDraggable = true
-//            annotationView?.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
-//
-////            guard annotationView != nil else {
-////                return nil
-////            }
-//            return annotationView
-//        }
-//        return nil
-//    }
+    func mapView(_ mapView: MAMapView!, viewFor annotation: MAAnnotation!) -> MAAnnotationView! {
+        if annotation.isKind(of: MAUserLocation.self) {
+            return nil
+        }
+        
+        if annotation.isKind(of: CustomPinAnnotation.self) {
+            let pointReuseIndetifier = "pointReuseIndetifier"
+            var customPinView: MAAnnotationView? = mapView.dequeueReusableAnnotationView(withIdentifier: pointReuseIndetifier)
+            
+            if customPinView == nil {
+                customPinView = MAAnnotationView(annotation: annotation, reuseIdentifier: pointReuseIndetifier)
+            }
+            customPinView?.image = UIImage(named: "homePage_wholeAnchor")
+            return customPinView!
+        }
+        
+        if annotation.isKind(of: MAPointAnnotation.self) {
+            let pointReuseIndetifier = "pointReuseIndetifier"
+            var annotationView: MAPinAnnotationView? = mapView.dequeueReusableAnnotationView(withIdentifier: pointReuseIndetifier)
+                as! MAPinAnnotationView?
+            
+            if annotationView == nil {
+                annotationView = MAPinAnnotationView(annotation: annotation, reuseIdentifier: pointReuseIndetifier)
+            }
+            
+            if (annotation.title == "Red Pocket Bike") {
+                annotationView?.image = UIImage(named: "HomePage_nearbyBikeRedPacket")
+            } else {
+                annotationView?.image = UIImage(named: "HomePage_nearbyBike")
+            }
+            
+            annotationView!.canShowCallout = true
+            annotationView!.animatesDrop = true
+            annotationView!.isDraggable = true
+            annotationView!.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+            
+            return annotationView!
+        }
+        return nil
+    }
 }
 
