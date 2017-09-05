@@ -136,7 +136,11 @@ class MainViewController: UIViewController, MAMapViewDelegate, AMapSearchDelegat
     }
     
     
-    // call back function - deal with search result
+    // retrieve search result, configure annotation and add annotation into mapView
+    ///
+    /// - Parameters:
+    ///   - request: search request
+    ///   - response: search response
     func onPOISearchDone(_ request: AMapPOISearchBaseRequest!, response: AMapPOISearchResponse!) {
         guard response.count > 0 else {
             return
@@ -161,15 +165,26 @@ class MainViewController: UIViewController, MAMapViewDelegate, AMapSearchDelegat
             return annotation
         }
         
+        // add annotations into mapView
         mapView.addAnnotations(pointAnnotations)
         mapView.showAnnotations(pointAnnotations, animated: true)
     }
     
+    
+    /// configure and display annotation view
+    ///
+    /// - Parameters:
+    ///   - mapView: mapView
+    ///   - annotation: annotation
+    /// - Returns: annotationView
     func mapView(_ mapView: MAMapView!, viewFor annotation: MAAnnotation!) -> MAAnnotationView! {
+        
+        // ignore user location annotation view
         if annotation.isKind(of: MAUserLocation.self) {
             return nil
         }
         
+        // display custom annotation view
         if annotation.isKind(of: CustomPinAnnotation.self) {
             let pointReuseIndetifier = "pointReuseIndetifier"
             var customPinView: MAAnnotationView? = mapView.dequeueReusableAnnotationView(withIdentifier: pointReuseIndetifier)
@@ -181,6 +196,7 @@ class MainViewController: UIViewController, MAMapViewDelegate, AMapSearchDelegat
             return customPinView!
         }
         
+        // display bike annotation view
         if annotation.isKind(of: MAPointAnnotation.self) {
             let pointReuseIndetifier = "pointReuseIndetifier"
             var annotationView: MAPinAnnotationView? = mapView.dequeueReusableAnnotationView(withIdentifier: pointReuseIndetifier)
