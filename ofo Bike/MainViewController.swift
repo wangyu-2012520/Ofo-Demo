@@ -90,7 +90,7 @@ class MainViewController: UIViewController, MAMapViewDelegate, AMapSearchDelegat
         customPin.lockedScreenPoint = CGPoint(x: CGFloat(view.bounds.width/2), y: CGFloat(view.bounds.height/2))
         customPin.isLockedToScreen = true
         
-        // show custom pin 
+        // show custom pin
         mapView.addAnnotation(customPin)
         mapView.showAnnotations([customPin], animated: true)
     }
@@ -123,6 +123,19 @@ class MainViewController: UIViewController, MAMapViewDelegate, AMapSearchDelegat
     }
     
     // MARK: - Map Search Delegate
+    
+    /// 用户地图交互
+    ///
+    /// - Parameters:
+    ///   - mapView: mapView
+    ///   - wasUserAction: 是否用户行为
+    func mapView(_ mapView: MAMapView!, mapDidMoveByUser wasUserAction: Bool) {
+        if wasUserAction {
+            searchCustomLocation(mapView.centerCoordinate)
+        }
+    }
+    
+    
     // call back function - deal with search result
     func onPOISearchDone(_ request: AMapPOISearchBaseRequest!, response: AMapPOISearchResponse!) {
         guard response.count > 0 else {
