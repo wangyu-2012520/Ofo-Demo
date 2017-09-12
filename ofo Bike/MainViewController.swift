@@ -9,12 +9,13 @@
 import UIKit
 import SidebarOverlay
 
-class MainViewController: UIViewController, MAMapViewDelegate, AMapSearchDelegate{
+class MainViewController: UIViewController, MAMapViewDelegate, AMapSearchDelegate, AMapNaviWalkManagerDelegate{
     var mapView: MAMapView!
     var search: AMapSearchAPI!
     var customPin: CustomPinAnnotation!
     var customPinView: MAAnnotationView!
     var nearSearch: Bool = true
+    var walkManager: AMapNaviWalkManager!
     
     @IBOutlet weak var panelView: UIView!
     
@@ -44,6 +45,9 @@ class MainViewController: UIViewController, MAMapViewDelegate, AMapSearchDelegat
         search = AMapSearchAPI()
         search.delegate = self
         
+        // init Walk Manager
+        walkManager = AMapNaviWalkManager()
+        walkManager.delegate = self
         
         // add left bar button
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "leftTopImage")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(showSettingPage))
@@ -93,11 +97,7 @@ class MainViewController: UIViewController, MAMapViewDelegate, AMapSearchDelegat
         
         // show custom pin
         mapView.addAnnotation(customPin)
-        
-//        if (nearSearch) {
-//            mapView.showAnnotations([customPin], animated: true)
-//            nearSearch = !nearSearch
-//        }
+        mapView.showAnnotations([customPin], animated: true)
     }
     
 //    override func viewDidAppear(_ animated: Bool) {
@@ -185,9 +185,14 @@ class MainViewController: UIViewController, MAMapViewDelegate, AMapSearchDelegat
         
         // add annotations into mapView
         mapView.addAnnotations(pointAnnotations)
-        mapView.showAnnotations(pointAnnotations, animated: true)
+        if nearSearch {
+            mapView.showAnnotations(pointAnnotations, animated: true)
+            nearSearch = !nearSearch
+        }
     }
     
+    
+    // MARK: - Map View Delegate
     /// configure and display annotation view
     ///
     /// - Parameters:
@@ -239,5 +244,39 @@ class MainViewController: UIViewController, MAMapViewDelegate, AMapSearchDelegat
         }
         return nil
     }
+    
+    // Add Annotation Animation - zoom up annotation view
+    func mapView(_ mapView: MAMapView!, didAddAnnotationViews views: [Any]!) {
+        let aViews = views as! [MAAnnotationView]
+        
+        for aView in aViews {
+            if aView.isKind(of: MAPinAnnotationView.self) {
+                aView.transform = CGAffineTransform(scaleX: 0, y: 0)
+                UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0, options: [], animations: {
+                    aView.transform = .identity
+                }, completion: nil)
+            }
+        }
+    }
+    
+    // select annotation View
+    func mapView(_ mapView: MAMapView!, didSelect view: MAAnnotationView!) {
+        
+        let start = customPin.coordinate
+        let end = view.annotation.coordinate
+        
+        let startPoint = AMapNaviPoint.location(withLatitude: CGFloat(start.latitude), longitude: CGFloat(start.longitude))!
+        let endPoint = AMapNaviPoint.location(withLatitude: CGFloat(end.latitude), longitude: CGFloat(end.longitude))!
+        
+        walkManager.calculateWalkRoute(withStart: [startPoint], end: [endPoint])
+    }
+    
+    // MARK: - AMap Navi Walk Manager Delegate 导航代理
+    func walkManager(onCalculateRouteSuccess walkManager: AMapNaviWalkManager) {
+        print("start navigation")
+        
+        //显示路径或开启导航
+    }
+    
 }
 
