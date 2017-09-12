@@ -14,6 +14,7 @@ class MainViewController: UIViewController, MAMapViewDelegate, AMapSearchDelegat
     var search: AMapSearchAPI!
     var customPin: CustomPinAnnotation!
     var customPinView: MAAnnotationView!
+    var nearSearch: Bool = true
     
     @IBOutlet weak var panelView: UIView!
     
@@ -87,12 +88,16 @@ class MainViewController: UIViewController, MAMapViewDelegate, AMapSearchDelegat
         // init custom pin
         customPin = CustomPinAnnotation()
         customPin.coordinate = mapView.centerCoordinate
-        customPin.lockedScreenPoint = CGPoint(x: CGFloat(view.bounds.width/2), y: CGFloat(view.bounds.height/2))
+        customPin.lockedScreenPoint = CGPoint(x: view.bounds.width/2, y: view.bounds.height/2)
         customPin.isLockedToScreen = true
         
         // show custom pin
         mapView.addAnnotation(customPin)
-        mapView.showAnnotations([customPin], animated: true)
+        
+//        if (nearSearch) {
+//            mapView.showAnnotations([customPin], animated: true)
+//            nearSearch = !nearSearch
+//        }
     }
     
 //    override func viewDidAppear(_ animated: Bool) {
@@ -122,6 +127,17 @@ class MainViewController: UIViewController, MAMapViewDelegate, AMapSearchDelegat
         }
     }
     
+    // MARK: - Pin Animation
+    func PinAmination() {
+        let endPin = customPinView?.frame
+        customPinView?.frame = (endPin?.offsetBy(dx: 0, dy: -15))!
+        
+        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0, options: [], animations: {
+            self.customPinView?.frame = endPin!
+        }, completion: nil)
+    }
+    
+    
     // MARK: - Map Search Delegate
     
     /// 用户地图交互
@@ -131,6 +147,8 @@ class MainViewController: UIViewController, MAMapViewDelegate, AMapSearchDelegat
     ///   - wasUserAction: 是否用户行为
     func mapView(_ mapView: MAMapView!, mapDidMoveByUser wasUserAction: Bool) {
         if wasUserAction {
+            customPin.isLockedToScreen = true
+            PinAmination()
             searchCustomLocation(mapView.centerCoordinate)
         }
     }
@@ -170,7 +188,6 @@ class MainViewController: UIViewController, MAMapViewDelegate, AMapSearchDelegat
         mapView.showAnnotations(pointAnnotations, animated: true)
     }
     
-    
     /// configure and display annotation view
     ///
     /// - Parameters:
@@ -186,14 +203,15 @@ class MainViewController: UIViewController, MAMapViewDelegate, AMapSearchDelegat
         
         // display custom annotation view
         if annotation.isKind(of: CustomPinAnnotation.self) {
-            let pointReuseIndetifier = "pointReuseIndetifier"
-            var customPinView: MAAnnotationView? = mapView.dequeueReusableAnnotationView(withIdentifier: pointReuseIndetifier)
+            let pointReuseIndetifier = "custompointReuseIndetifier"
+            var cpv: MAAnnotationView? = mapView.dequeueReusableAnnotationView(withIdentifier: pointReuseIndetifier)
             
-            if customPinView == nil {
-                customPinView = MAAnnotationView(annotation: annotation, reuseIdentifier: pointReuseIndetifier)
+            if cpv == nil {
+                cpv = MAAnnotationView(annotation: annotation, reuseIdentifier: pointReuseIndetifier)
             }
-            customPinView?.image = UIImage(named: "homePage_wholeAnchor")
-            return customPinView!
+            cpv?.image = UIImage(named: "homePage_wholeAnchor")
+            customPinView = cpv
+            return cpv!
         }
         
         // display bike annotation view

@@ -73,7 +73,7 @@
       <AdditionalOptions>
       </AdditionalOptions>
       <LocationScenarioReference
-         identifier = "../Hong Kong.gpx"
+         identifier = "../ShaoShi Castle.gpx"
          referenceType = "0">
       </LocationScenarioReference>
    </LaunchAction>
